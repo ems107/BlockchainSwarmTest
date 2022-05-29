@@ -169,3 +169,39 @@
 20:57:14.686991 table@remove removed @34
 20:58:55.823297 db@close closing
 20:58:55.823430 db@close done T·132.717µs
+=============== May 29, 2022 (CEST) ===============
+21:11:35.981819 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:11:35.981979 version@stat F·[0 1] S·657B[0B 657B] Sc·[0.00 0.00]
+21:11:35.982028 db@open opening
+21:11:35.982079 journal@recovery F·1
+21:11:35.983358 journal@recovery recovering @36
+21:11:35.985467 memdb@flush created L0@39 N·103 S·1KiB "loc..seq,v7365":"n:\xee..ong,v7367"
+21:11:35.986344 version@stat F·[1 1] S·2KiB[1KiB 657B] Sc·[0.25 0.00]
+21:11:35.994277 db@janitor F·5 G·1
+21:11:35.994333 db@janitor removing table-35
+21:11:35.994427 db@open done T·12.387259ms
+21:12:09.583167 table@compaction L0·1 -> L1·1 S·2KiB Q·7494
+21:12:09.585957 table@build created L1@42 N·13 S·657B "loc..seq,v7365":"version,v1"
+21:12:09.586060 version@stat F·[0 1] S·657B[0B 657B] Sc·[0.00 0.00]
+21:12:09.587698 table@compaction committed F-1 S-1KiB Ke·0 D·103 T·4.331457ms
+21:12:09.587865 table@remove removed @38
+21:12:56.078746 db@close closing
+21:12:56.078863 db@close done T·117.949µs
+=============== May 29, 2022 (CEST) ===============
+21:15:12.643367 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:15:12.643847 version@stat F·[0 1] S·657B[0B 657B] Sc·[0.00 0.00]
+21:15:12.643924 db@open opening
+21:15:12.643992 journal@recovery F·1
+21:15:12.645449 journal@recovery recovering @40
+21:15:12.647859 memdb@flush created L0@43 N·58 S·861B "loc..seq,v7468":"n:\xee..ong,v7469"
+21:15:12.649358 version@stat F·[1 1] S·1KiB[861B 657B] Sc·[0.25 0.00]
+21:15:12.657488 db@janitor F·5 G·1
+21:15:12.657555 db@janitor removing table-39
+21:15:12.657755 db@open done T·13.818102ms
+21:15:40.732983 table@compaction L0·1 -> L1·1 S·1KiB Q·7545
+21:15:40.736027 table@build created L1@46 N·13 S·648B "loc..seq,v7468":"version,v1"
+21:15:40.736188 version@stat F·[0 1] S·648B[0B 648B] Sc·[0.00 0.00]
+21:15:40.737235 table@compaction committed F-1 S-870B Ke·0 D·58 T·4.06448ms
+21:15:40.737432 table@remove removed @42
+21:57:38.964096 db@close closing
+21:57:38.964275 db@close done T·178.291µs

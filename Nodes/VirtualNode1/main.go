@@ -12,13 +12,12 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/melbahja/goph"
 )
 
-const processAddress = "http://localhost:3334"
-const key = "{\"address\":\"fbdaa5dcf6ea0323359a1abb20659868351e86a6\",\"crypto\":{\"cipher\":\"aes-128-ctr\",\"ciphertext\":\"c9b411a3091e35264fa5a693dc591488e32137931507c599a83c2b1c7146c9df\",\"cipherparams\":{\"iv\":\"099540aa431b73e512a26e2c73fb066e\"},\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"n\":262144,\"p\":1,\"r\":8,\"salt\":\"1b5cf5662dea6a656e5013b2e56b82d881d3fcbbb5b0688ca66f2a17a0df25eb\"},\"mac\":\"f6275b4f837a9d6dbf58a007f45e483f1f382332ca74e2484e8ddda802bbbf26\"},\"id\":\"9327c735-5870-451e-9b51-6771e58f8fa4\",\"version\":3}"
+const processAddress = "http://localhost:3335"
+const key = "{\"address\":\"9c632d3b82943a2b482e70cbab0abaa8952f7e12\",\"crypto\":{\"cipher\":\"aes-128-ctr\",\"ciphertext\":\"60418ccf585ca16ec26da3f718d02a0185951c5b729e2611bcf6c9fe1e474d14\",\"cipherparams\":{\"iv\":\"77889e19c3eac002c91850a93092ff7c\"},\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"n\":262144,\"p\":1,\"r\":8,\"salt\":\"a0c8a0fc9691996dc2325fdbb58b5fd489a2de95e30279bcd2008f8ecafa1ed7\"},\"mac\":\"f7d09f8b481abcd1aaa9103774665abbf407443c57161650ead355aea05d62ca\"},\"id\":\"ae232407-001d-45a5-b3a1-5ba18dd8b3eb\",\"version\":3}"
 const contractAddress = "0x49aaaabfa8711D04AfE8e3682598B97BCfEfeC64"
-const accountPubKey = "0xfbdaa5dcf6ea0323359a1abb20659868351e86a6"
+const accountPubKey = "0x49aaaabfa8711D04AfE8e3682598B97BCfEfeC64"
 const passphrase = "miguelangel"
 
 func main() {
@@ -51,30 +50,6 @@ func main() {
 		// time.Sleep(time.Second * 5)
 		log.Println("Press a button to continue...")
 		input := bufio.NewScanner(os.Stdin)
-		input.Scan()
-
-		order, err := contract.GetOrder(nil)
-		if err != nil {
-			log.Fatalf("Failed to retrieve order: %v", err)
-		}
-		log.Printf("Order: %v", order)
-		// time.Sleep(time.Second * 5)
-
-		log.Println("Executing order in robot...")
-		client, err := goph.New("robot", "10.42.0.230", goph.Password("maker"))
-		if err != nil {
-			log.Fatalf("Failed to connect to robot: %v", err)
-		}
-		defer client.Close()
-
-		out, err := client.Run("./robot " + order)
-		if err != nil {
-			log.Fatalf("Failed to execute order: %v", err)
-		}
-		log.Println(out)
-
-		log.Println("Press a button to continue...")
-		input = bufio.NewScanner(os.Stdin)
 		input.Scan()
 	}
 }
