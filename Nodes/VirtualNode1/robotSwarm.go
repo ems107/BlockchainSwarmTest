@@ -30,13 +30,14 @@ var (
 
 // RobotSwarmMetaData contains all meta data concerning the RobotSwarm contract.
 var RobotSwarmMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"getOrder\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"number\",\"type\":\"uint256\"}],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"total\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"getOrder\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"number\",\"type\":\"uint256\"}],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"total\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 	Sigs: map[string]string{
 		"d36dedd2": "getOrder()",
+		"775a25e3": "getTotal()",
 		"7cf5dab0": "increment(uint256)",
 		"2ddbd13a": "total()",
 	},
-	Bin: "0x608060405234801561001057600080fd5b506101e8806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632ddbd13a146100465780637cf5dab014610062578063d36dedd214610077575b600080fd5b61004f60005481565b6040519081526020015b60405180910390f35b6100756100703660046100fc565b61008c565b005b61007f6100a5565b6040516100599190610115565b8060008082825461009d919061016a565b909155505050565b606060026000546100b69190610190565b6000036100dd5750604080518082019091526005815264149a59da1d60da1b602082015290565b506040805180820190915260048152631319599d60e21b602082015290565b60006020828403121561010e57600080fd5b5035919050565b600060208083528351808285015260005b8181101561014257858101830151858201604001528201610126565b81811115610154576000604083870101525b50601f01601f1916929092016040019392505050565b6000821982111561018b57634e487b7160e01b600052601160045260246000fd5b500190565b6000826101ad57634e487b7160e01b600052601260045260246000fd5b50069056fea2646970667358221220865870e161c41f39cf80a5ebe753ca8b34a26945d94ef0ce8815ec86fe71189b64736f6c634300080e0033",
+	Bin: "0x608060405234801561001057600080fd5b506101fb806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80632ddbd13a14610051578063775a25e31461006d5780637cf5dab014610075578063d36dedd21461008a575b600080fd5b61005a60005481565b6040519081526020015b60405180910390f35b60005461005a565b61008861008336600461010f565b61009f565b005b6100926100b8565b6040516100649190610128565b806000808282546100b0919061017d565b909155505050565b606060026000546100c991906101a3565b6000036100f05750604080518082019091526005815264149a59da1d60da1b602082015290565b506040805180820190915260048152631319599d60e21b602082015290565b60006020828403121561012157600080fd5b5035919050565b600060208083528351808285015260005b8181101561015557858101830151858201604001528201610139565b81811115610167576000604083870101525b50601f01601f1916929092016040019392505050565b6000821982111561019e57634e487b7160e01b600052601160045260246000fd5b500190565b6000826101c057634e487b7160e01b600052601260045260246000fd5b50069056fea2646970667358221220c4b21286a3c7b1903d5d440c144226e2eeac3aafd0b0428be97723803f73aa2964736f6c634300080e0033",
 }
 
 // RobotSwarmABI is the input ABI used to generate the binding from.
@@ -239,6 +240,37 @@ func (_RobotSwarm *RobotSwarmSession) GetOrder() (string, error) {
 // Solidity: function getOrder() view returns(string)
 func (_RobotSwarm *RobotSwarmCallerSession) GetOrder() (string, error) {
 	return _RobotSwarm.Contract.GetOrder(&_RobotSwarm.CallOpts)
+}
+
+// GetTotal is a free data retrieval call binding the contract method 0x775a25e3.
+//
+// Solidity: function getTotal() view returns(uint256)
+func (_RobotSwarm *RobotSwarmCaller) GetTotal(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _RobotSwarm.contract.Call(opts, &out, "getTotal")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// GetTotal is a free data retrieval call binding the contract method 0x775a25e3.
+//
+// Solidity: function getTotal() view returns(uint256)
+func (_RobotSwarm *RobotSwarmSession) GetTotal() (*big.Int, error) {
+	return _RobotSwarm.Contract.GetTotal(&_RobotSwarm.CallOpts)
+}
+
+// GetTotal is a free data retrieval call binding the contract method 0x775a25e3.
+//
+// Solidity: function getTotal() view returns(uint256)
+func (_RobotSwarm *RobotSwarmCallerSession) GetTotal() (*big.Int, error) {
+	return _RobotSwarm.Contract.GetTotal(&_RobotSwarm.CallOpts)
 }
 
 // Total is a free data retrieval call binding the contract method 0x2ddbd13a.

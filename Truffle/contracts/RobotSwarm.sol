@@ -11,6 +11,10 @@ contract RobotSwarm {
         return "Left";
     }
 
+    function getTotal() public view returns (uint256) {
+        return total;
+    }
+
     function increment(uint256 number) public {
         total += number;
     }
