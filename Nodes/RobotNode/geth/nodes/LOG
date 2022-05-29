@@ -18,3 +18,36 @@
 09:06:37.995363 db@open done T·18.631407ms
 13:08:48.581956 db@close closing
 13:08:48.582192 db@close done T·232.004µs
+=============== May 29, 2022 (CEST) ===============
+17:04:31.954993 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:31.955201 version@stat F·[1] S·2KiB[2KiB] Sc·[0.25]
+17:04:31.955308 db@open opening
+17:04:31.955516 journal@recovery F·1
+17:04:31.956717 journal@recovery recovering @3
+17:04:31.960863 memdb@flush created L0@5 N·1353 S·12KiB "loc..seq,v262":"n:\xee..ong,v275"
+17:04:31.962043 version@stat F·[2] S·15KiB[15KiB] Sc·[0.50]
+17:04:31.968220 db@janitor F·4 G·0
+17:04:31.968287 db@open done T·12.962979ms
+17:04:31.971540 table@compaction L0·2 -> L1·0 S·15KiB Q·1609
+17:04:31.977570 table@build created L1@8 N·13 S·657B "loc..seq,v262":"version,v1"
+17:04:31.977908 version@stat F·[0 1] S·657B[0B 657B] Sc·[0.00 0.00]
+17:04:31.980081 table@compaction committed F-1 S-14KiB Ke·0 D·1594 T·8.423394ms
+17:04:31.980927 table@remove removed @2
+17:07:49.729083 db@close closing
+17:07:49.729175 db@close done T·91.889µs
+=============== May 29, 2022 (CEST) ===============
+17:07:59.864890 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:59.865039 version@stat F·[0 1] S·657B[0B 657B] Sc·[0.00 0.00]
+17:07:59.865109 db@open opening
+17:07:59.865170 journal@recovery F·1
+17:07:59.866421 journal@recovery recovering @6
+17:07:59.868425 memdb@flush created L0@9 N·15 S·332B "loc..seq,v1618":"n:\xee..ail,v1611"
+17:07:59.869760 version@stat F·[1 1] S·989B[332B 657B] Sc·[0.25 0.00]
+17:07:59.875267 db@janitor F·5 G·1
+17:07:59.875298 db@janitor removing table-5
+17:07:59.875391 db@open done T·10.266768ms
+17:08:15.425340 table@compaction L0·1 -> L1·1 S·989B Q·1639
+17:08:15.427643 table@build created L1@12 N·13 S·660B "loc..seq,v1618":"version,v1"
+17:08:15.427824 version@stat F·[0 1] S·660B[0B 660B] Sc·[0.00 0.00]
+17:08:15.429236 table@compaction committed F-1 S-329B Ke·0 D·15 T·3.802205ms
+17:08:15.429360 table@remove removed @8

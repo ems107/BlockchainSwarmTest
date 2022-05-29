@@ -1,7 +1,6 @@
 const Migrations = artifacts.require("Migrations");
-var Hello = artifacts.require("./Hello.sol");
-var TronToken = artifacts.require("./TronToken.sol");
+var RobotSwarm = artifacts.require("./RobotSwarm.sol")
 
 module.exports = function (deployer) {
-  deployer.deploy(TronToken);
+  deployer.deploy(RobotSwarm);
 };
